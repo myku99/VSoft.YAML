@@ -82,6 +82,9 @@ type
     procedure TestJSONMalformedDuplicateKeys;
 
     [Test]
+    procedure TestJSONFlowDuplicateKeysWithErrorMode;
+
+    [Test]
     procedure TestJSONMalformedInvalidEscapes;
 
     [Test]
@@ -795,6 +798,26 @@ begin
   
   // JSON allows duplicate keys - the last one wins
   Assert.AreEqual('value2', doc.Root.Values['key'].AsString);
+end;
+
+procedure TJSONParsingTests.TestJSONFlowDuplicateKeysWithErrorMode;
+var
+  jsonText : string;
+  options : IYAMLParserOptions;
+begin
+  jsonText := '{"key": "value1", "key": "value2"}';
+
+  options := TYAML.CreateParserOptions;
+  options.JSONMode := true;
+  options.DuplicateKeyBehavior := TYAMLDuplicateKeyBehavior.dkError;
+
+  Assert.WillRaise(
+    procedure
+    begin
+      TYAML.LoadFromString(jsonText, options);
+    end,
+    EYAMLParseException
+  );
 end;
 
 procedure TJSONParsingTests.TestJSONMalformedInvalidEscapes;

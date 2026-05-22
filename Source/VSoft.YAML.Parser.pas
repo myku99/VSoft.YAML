@@ -891,6 +891,8 @@ begin
       end;
       
       key := FCurrentToken.value;
+      if (FOptions.DuplicateKeyBehavior = TYAMLDuplicateKeyBehavior.dkError) and result.ContainsKey(key) then
+        RaiseParseError('duplicated mapping key : "' + key + '"');
       NextToken;
     end
     else if FCurrentToken.TokenKind = TYAMLTokenKind.EOF then

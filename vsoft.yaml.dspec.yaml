@@ -6,15 +6,15 @@ min client version: 1.0
 
 metadata:
   id: VSoft.YAML
-  version: 1.5.4
+  version: 1.5.5
   description: YAML Parser
-  authors: [ Vincent Parrett ]
+  authors: [Vincent Parrett]
   projectUrl: https://github.com/VSoftTechnologies/VSoft.YAML
   repositoryUrl: https://github.com/VSoftTechnologies/VSoft.YAML
   repositoryCommit: #HASH#
   license: Apache-2.0
   copyright: Vincent Parrett and Contributors
-  tags: [ yaml, parser ]
+  tags: [yaml, parser]
   readme: README.md
 
 # define variable defaults - can be overriden in targetPlatforms
@@ -23,28 +23,28 @@ variables:
 
 targetPlatforms:
   # use ranges to simplify the file
-  - compilers: [ delphixe2, delphixe3 ]
-    platforms: [ win32, win64, macos32 ]
+  - compilers: [delphixe2, delphixe3]
+    platforms: [win32, win64, macos32]
     # if not specified default template used
   - compiler: delphixe4
-    platforms: [ win32, win64, macos32, ios32, iossimulator ]
-  - compilers: [ delphixe5, delphixe6, delphixe7 ]
-    platforms: [ win32, win64, macos32, android, ios32, iossimulator ]
-  - compilers: [ delphixe8, delphi10.0, delphi10.1 ]
-    platforms: [ win32, win64, macos32, android, ios32, ios64, iossimulator ]
+    platforms: [win32, win64, macos32, ios32, iossimulator]
+  - compilers: [delphixe5, delphixe6, delphixe7]
+    platforms: [win32, win64, macos32, android, ios32, iossimulator]
+  - compilers: [delphixe8, delphi10.0, delphi10.1]
+    platforms: [win32, win64, macos32, android, ios32, ios64, iossimulator]
   - compiler: delphi10.2
-    platforms: [ win32, win64, macos32, android, ios32, ios64, iossimulator, linux64 ]
+    platforms: [win32, win64, macos32, android, ios32, ios64, iossimulator, linux64]
   - compiler: delphi10.3
-    platforms: [ win32, win64, macos32, macos64, android, android64, ios32, ios64, iossimulator, linux64 ]
+    platforms: [win32, win64, macos32, macos64, android, android64, ios32, ios64, iossimulator, linux64]
   - compiler: delphi10.4
-    platforms: [ win32, win64, macos64, android, android64, ios64, iossimulator, linux64 ]
-  - compilers: [ delphi11, delphi12 ]
-    platforms: [ win32, win64, macos64, macosarm64, android, android64, ios64, linux64 ]
+    platforms: [win32, win64, macos64, android, android64, ios64, iossimulator, linux64]
+  - compilers: [delphi11, delphi12]
+    platforms: [win32, win64, macos64, macosarm64, android, android64, ios64, linux64]
     variables:
       packageSource: Rad Studio $compilernoprefix$.0
 
-  - compilers: [ delphi13 ]
-    platforms: [ win32, win64, winarm64ec, macos64, macosarm64, android, android64, ios64, linux64 ]
+  - compilers: [delphi13]
+    platforms: [win32, win64, winarm64ec, macos64, macosarm64, android, android64, ios64, linux64]
     variables:
       packageSource: Rad Studio $compilernoprefix$.0
 
