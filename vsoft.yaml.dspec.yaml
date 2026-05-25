@@ -38,15 +38,10 @@ targetPlatforms:
     platforms: [win32, win64, macos32, macos64, android, android64, ios32, ios64, iossimulator, linux64]
   - compiler: delphi10.4
     platforms: [win32, win64, macos64, android, android64, ios64, iossimulator, linux64]
-  - compilers: [delphi11, delphi12]
+  - compilers: [delphi11.0, delphi12.0]
     platforms: [win32, win64, macos64, macosarm64, android, android64, ios64, linux64]
-    variables:
-      packageSource: Rad Studio $compilernoprefix$.0
-
-  - compilers: [delphi13]
+  - compilers: [delphi13.0]
     platforms: [win32, win64, winarm64ec, macos64, macosarm64, android, android64, ios64, linux64]
-    variables:
-      packageSource: Rad Studio $compilernoprefix$.0
 
 templates:
   - name: default
